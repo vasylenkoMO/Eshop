@@ -2,16 +2,15 @@ package com.testEshop.model.entity;
 
 import com.testEshop.model.Model;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by vastl271nko on 27.08.16.
  */
+@Entity
+@Table(name = "category")
 public class Category extends Model {
 
     @Column(name = "name", length = 50)

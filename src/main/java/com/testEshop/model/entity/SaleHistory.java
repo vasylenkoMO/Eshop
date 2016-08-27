@@ -22,7 +22,7 @@ public class SaleHistory extends Model {
     private Date activeTo;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn( name = "order_id")
+    @JoinColumn( name = "sale_id")
     private Sale saleHistory;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

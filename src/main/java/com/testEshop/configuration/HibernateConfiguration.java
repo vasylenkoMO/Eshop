@@ -31,7 +31,7 @@ public class HibernateConfiguration {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] { "com.p314nguin.springmvc.model" });
+        sessionFactory.setPackagesToScan(new String[]{"com.p314nguin.springmvc.model"});
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
