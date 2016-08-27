@@ -2,11 +2,11 @@ package com.testEshop.model.entity;
 
 import com.testEshop.model.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by vastl271nko on 27.08.16.
@@ -33,6 +33,13 @@ public class Client extends Model {
 
     @Column(name = "password")
     private String password;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "source_id", referencedColumnName = "id")
+    private Source source;
+
+    @OneToMany(mappedBy = "client")
+    private Set<Sale> sales = new HashSet<Sale>();
 
     public Client() {
     }
@@ -67,5 +74,33 @@ public class Client extends Model {
 
     public String getUsername() {
         return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Source getSource() {
+        return source;
+    }
+
+    public void setSource(Source source) {
+        this.source = source;
+    }
+
+    public Set<Sale> getSales() {
+        return sales;
+    }
+
+    public void setSales(Set<Sale> sales) {
+        this.sales = sales;
     }
 }
