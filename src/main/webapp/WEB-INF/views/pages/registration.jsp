@@ -17,7 +17,7 @@
 
     <h1>Enrollment Form</h1>
 
-    <form:form method="POST" modelAttribute="client" class="form-horizontal">
+    <form:form method="POST" modelAttribute="client" class="form-horizontal" action="registration">
 
         <div class="row">
             <div class="form-group col-md-12">
@@ -50,6 +50,46 @@
                     <form:input type="text" path="email" id="email" class="form-control input-sm"/>
                     <div class="has-error">
                         <form:errors path="email" class="help-inline"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label class="col-md-3 control-lable" for="username">Username</label>
+                <div class="col-md-7">
+                    <form:input type="text" path="username" id="username" class="form-control input-sm"/>
+                    <div class="has-error">
+                        <form:errors path="username" class="help-inline"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label class="col-md-3 control-lable" for="lastName">Password</label>
+                <div class="col-md-7">
+                    <form:input type="password" path="password" id="password" class="form-control input-sm"/>
+                    <div class="has-error">
+                        <form:errors path="password" class="help-inline"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label class="col-md-3 control-lable" for="source">Country</label>
+                <div class="col-md-7">
+                    <form:select path="source" id="source" class="form-control input-sm">
+                        <form:option value="">Select Source</form:option>
+                        <form:options items="${sources}" />
+                    </form:select>
+                    <div class="has-error">
+                        <form:errors path="source" class="help-inline"/>
                     </div>
                 </div>
             </div>

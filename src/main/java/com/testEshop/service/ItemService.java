@@ -7,14 +7,13 @@ import java.util.List;
 /**
  * Created by vastl271nko on 27.08.16.
  */
-public interface ItemService<T extends Model> {
-    public List<T> getAll();
+public interface ItemService<T> {
 
-    public T getById(Long id);
+    public List<T> findAll();
 
-    public void add(T model);
+    public void save(T object);
 
-    public void update(T model);
+    public T findById(int id);
 
-    public void remove(T model);
+    public void deleteItem(T object);
 }

@@ -7,15 +7,13 @@ import java.util.List;
 /**
  * Created by vastl271nko on 15.08.16.
  */
-public interface ItemDao<T extends Model> {
+public interface ItemDao<T> {
 
-    public List<T> getAll();
+    public List<T> findAll();
 
-    public T getById(Long id);
+    public void save(T object);
 
-    public void add(T model);
+    public T findById(int id);
 
-    public void update(T model);
-
-    public void remove(T model);
+    public void deleteItem(T object);
 }

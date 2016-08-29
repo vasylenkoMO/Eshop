@@ -46,4 +46,9 @@ public class Source extends Model {
     public void setClients(Set<Client> clients) {
         this.clients = clients;
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }
