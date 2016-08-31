@@ -13,7 +13,6 @@ import java.util.List;
 /**
  * Created by vastl271nko on 27.08.16.
  */
-@Transactional
 @Repository(value = "sourceDao")
 public class SourceDaoImpl extends AbstractDao<Integer, Source> implements SourceDao {
 

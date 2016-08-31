@@ -1,18 +1,8 @@
-.form-container {
-  position:fixed;
-  width:50%;
-  margin-left: 20px;
-  margin-top: 20px;
-  margin-bottom: 150px;
-  padding: 0px;
-  background-color: #E8E1E1;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
+
 
 .floatRight{
-	float:right;
-	margin-right: 18px;
+  padding-left: 750px;
+  margin: 30px;
 }
 
 .has-error{

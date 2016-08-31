@@ -31,10 +31,16 @@
        <put-attribute name="body" value="/WEB-INF/views/pages/contactus.jsp" />  
    </definition>
 
-    <!-- Contact-us Page -->
+    <!-- Registration Page -->
     <definition name="registration" extends="base-definition">
         <put-attribute name="title" value="Register" />
         <put-attribute name="body" value="/WEB-INF/views/pages/registration.jsp" />
+    </definition>
+
+    <!-- Login Page -->
+    <definition name="login" extends="base-definition">
+        <put-attribute name="title" value="Login" />
+        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />
     </definition>
 
 
