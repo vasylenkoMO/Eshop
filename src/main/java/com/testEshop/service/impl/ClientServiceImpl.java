@@ -1,9 +1,9 @@
 package com.testEshop.service.impl;
 
 import com.testEshop.dao.ClientDao;
-import com.testEshop.dao.impl.ClientDaoImpl;
 import com.testEshop.model.entity.Client;
 import com.testEshop.service.ClientService;
+import com.testEshop.service.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +19,9 @@ public class ClientServiceImpl implements ClientService{
 
     @Autowired
     private ClientDao clientDao;
+
+    @Autowired
+    private MailService mailService;
 
 
     @Override
@@ -39,5 +42,11 @@ public class ClientServiceImpl implements ClientService{
     @Override
     public void deleteItem(Client object) {
         clientDao.deleteItem(object);
+    }
+
+
+    @Override
+    public void sendClientRegisterConfirmation(Client client) {
+        mailService.sendEmail(client);
     }
 }

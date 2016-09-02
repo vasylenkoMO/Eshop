@@ -4,6 +4,7 @@ import com.testEshop.dao.ClientDao;
 import com.testEshop.editor.SourceEditor;
 import com.testEshop.model.entity.Client;
 import com.testEshop.model.entity.Source;
+import com.testEshop.service.ClientService;
 import com.testEshop.service.SourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +34,8 @@ public class EshopRegistrationController {
     @Autowired
     private SourceEditor sourceEditor;
 
+    @Autowired
+    ClientService clientService;
     @RequestMapping(value = { "/registration"}, method = RequestMethod.GET)
     public String registerPage(ModelMap modelMap) {
 
@@ -58,6 +61,8 @@ public class EshopRegistrationController {
 
         modelMap.addAttribute("success", "Client: " + client.getLastName() + " " + client.getLastName() + " registered"
                 + "successfully");
+
+        clientService.sendClientRegisterConfirmation(client);
         return "home";
     }
 }
