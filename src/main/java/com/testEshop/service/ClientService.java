@@ -7,5 +7,13 @@ import com.testEshop.model.entity.Client;
  */
 public interface ClientService extends ItemService<Client> {
 
-    public void  sendClientRegisterConfirmation(Client client);
+    void  sendClientRegisterConfirmation(Client client);
+
+    Client findBySSO(String sso);
+
+    void deleteUserBySSO(String sso);
+
+    boolean isUserSSOUnique(Integer id, String sso);
+
+
 }

@@ -7,6 +7,8 @@ import com.testEshop.model.entity.Client;
  */
 public interface ClientDao extends ItemDao<Client> {
 
-    public  Client getByUsername(String username);
+    Client findBySSO(String sso);
+
+    void deleteBySSO(String sso);
 
 }

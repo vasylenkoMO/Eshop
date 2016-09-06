@@ -82,7 +82,7 @@
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3 control-lable" for="source">Country</label>
+                <label class="col-md-3 control-lable" for="source">Source</label>
                 <div class="col-md-7">
                     <form:select path="source" id="source" class="form-control input-sm">
                         <form:option value="">Select Source</form:option>
@@ -90,6 +90,18 @@
                     </form:select>
                     <div class="has-error">
                         <form:errors path="source" class="help-inline"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label class="col-md-3 control-lable" for="clientProfiles">Roles</label>
+                <div class="col-md-7">
+                    <form:select path="clientProfiles" items="${roles}" multiple="true" itemValue="id" itemLabel="type" class="form-control input-sm" />
+                    <div class="has-error">
+                        <form:errors path="clientProfiles" class="help-inline"/>
                     </div>
                 </div>
             </div>

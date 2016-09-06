@@ -41,7 +41,7 @@ public class MailServiceImpl implements MailService {
                     new InternetAddress(client.getEmail()));
             mimeMessage.setText("Dear " + client.getFirstName() + " " + client.getLastName()
                     + ", thank you for registration. We are glad to see you on our site. \n Your login: "
-                    + client.getUsername() + ".");
+                    + client.getSsoId() + ".");
             mimeMessage.setSubject("Notification for registration on site. ");
         };
         return preparator;

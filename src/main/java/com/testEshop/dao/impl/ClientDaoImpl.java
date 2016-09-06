@@ -5,7 +5,10 @@ import com.testEshop.dao.ClientDao;
 import com.testEshop.model.entity.Category;
 import com.testEshop.model.entity.Client;
 import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
 import org.hibernate.criterion.Restrictions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,14 +21,18 @@ public class ClientDaoImpl extends AbstractDao<Integer,Client> implements Client
 
     public ClientDaoImpl() {
     }
+    static final Logger logger = LoggerFactory.getLogger(ClientDaoImpl.class);
 
-    @Override
-    public Client getByUsername(String username) {
-        Criteria criteria = getSession().createCriteria(Client.class);
 
-        criteria.add(Restrictions.eq("username", username));
-
-        return (Client)criteria.uniqueResult();
+    public Client findBySSO(String sso) {
+        logger.info("SSO : {}", sso);
+        Criteria crit = createEntityCriteria();
+        crit.add(Restrictions.eq("ssoId", sso));
+        Client client = (Client) crit.uniqueResult();
+        if(client!=null){
+            Hibernate.initialize(client.getClientProfiles());
+        }
+        return client;
     }
 
     @SuppressWarnings("unchecked")
@@ -48,5 +55,12 @@ public class ClientDaoImpl extends AbstractDao<Integer,Client> implements Client
     @Override
     public void deleteItem(Client object) {
         delete(object);
+    }
+
+    public void deleteBySSO(String sso) {
+        Criteria crit = createEntityCriteria();
+        crit.add(Restrictions.eq("ssoId", sso));
+        Client client = (Client) crit.uniqueResult();
+        delete(client);
     }
 }

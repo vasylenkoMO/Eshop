@@ -5,6 +5,7 @@ import com.testEshop.model.entity.Client;
 import com.testEshop.service.ClientService;
 import com.testEshop.service.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,6 +24,8 @@ public class ClientServiceImpl implements ClientService{
     @Autowired
     private MailService mailService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public List<Client> findAll() {
@@ -31,6 +34,7 @@ public class ClientServiceImpl implements ClientService{
 
     @Override
     public void save(Client object) {
+        object.setPassword(passwordEncoder.encode(object.getPassword()));
         clientDao.save(object);
     }
 
@@ -48,5 +52,22 @@ public class ClientServiceImpl implements ClientService{
     @Override
     public void sendClientRegisterConfirmation(Client client) {
         mailService.sendEmail(client);
+    }
+
+    @Override
+    public Client findBySSO(String sso) {
+        Client user = clientDao.findBySSO(sso);
+        return user;
+    }
+
+    @Override
+    public void deleteUserBySSO(String sso) {
+        clientDao.deleteBySSO(sso);
+    }
+
+    @Override
+    public boolean isUserSSOUnique(Integer id, String sso) {
+        Client client = findBySSO(sso);
+        return ( client == null || ((id != null) && (client.getId() == id)));
     }
 }
