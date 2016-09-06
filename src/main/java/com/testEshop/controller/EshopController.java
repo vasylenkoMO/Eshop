@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 /**
- * Created by vastl271nko on 27.08.16.
+ *  * Controller class for "/" url.
+ *
+ * @author Maksym Vasylenko
+ * @version 1.0.0 27.08.2016
  */
 @Controller
 @RequestMapping(value = {"/"})

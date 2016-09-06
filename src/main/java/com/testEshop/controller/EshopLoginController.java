@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Created by vastl271nko on 31.08.16.
+ * Controller class for "/login" url.
+ *
+ * @author Maksym Vasylenko
+ * @version 1.0.0 31.08.2016
  */
 @Controller
 @RequestMapping(value = "/")

@@ -11,7 +11,10 @@ import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 /**
- * Created by vastl271nko on 27.08.16.
+ * Configuration class for application
+ *
+ * @author Maksym Vasylenko
+ * @version 1.0.0 27.08.2016
  */
 @Configuration
 @EnableWebMvc

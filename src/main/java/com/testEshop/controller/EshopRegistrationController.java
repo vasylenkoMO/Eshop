@@ -19,7 +19,10 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * Created by vastl271nko on 31.08.16.
+ * Controller class for "/registration" url.
+ *
+ * @author Maksym Vasylenko
+ * @version 1.0.0 31.08.2016
  */
 @Controller
 @RequestMapping(value = "/")

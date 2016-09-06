@@ -16,7 +16,10 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
- * Created by vastl271nko on 27.08.16.
+ * Hibernate configuration class for application
+ *
+ * @author Maksym Vasylenko
+ * @version 1.0.0 27.08.2016
  */
 @Configuration
 @EnableTransactionManagement

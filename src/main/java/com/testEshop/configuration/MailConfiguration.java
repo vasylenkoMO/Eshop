@@ -9,7 +9,10 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import java.util.Properties;
 
 /**
- * Created by vastl271nko on 02.09.16.
+ * Mail Configuration class for application
+ *
+ * @author Maksym Vasylenko
+ * @version 1.0.0 02.09.2016
  */
 @Configuration
 @ComponentScan(basePackages = "com.testEshop")

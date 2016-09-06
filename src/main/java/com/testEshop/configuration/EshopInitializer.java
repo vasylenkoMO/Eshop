@@ -9,7 +9,10 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 /**
- * Created by vastl271nko on 27.08.16.
+ * Initializer class for application
+ *
+ * @author Maksym Vasylenko
+ * @version 1.0.0 27.08.2016
  */
 public class EshopInitializer implements WebApplicationInitializer {
     @Override
